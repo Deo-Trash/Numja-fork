@@ -24,4 +24,5 @@ jobs:
           distribution: 'oracle'
 
       - name: "Run the Maven test phase"
+        working-directory: ./numja
         run: mvn test
