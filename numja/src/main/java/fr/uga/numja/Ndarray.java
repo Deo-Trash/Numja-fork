@@ -87,11 +87,14 @@ public class Ndarray {
                 for (int j = 0; j < cols; j++) {
                     string.append(data[i][j]);
                     string.append(" ");
-                    if(i != cols - 1){
+                    if(j != cols - 1){
                         string.append(", ");
                     }
                 }
-                string.append("]\n");
+                string.append("]");
+                if(i != rows - 1){
+                    string.append(",\n");
+                }
             }
             string.append("]");
         }
