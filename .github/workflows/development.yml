@@ -1,4 +1,4 @@
-name: Development Workflow (On PR)
+name: Unit tests
 
 on:
   pull_request:
