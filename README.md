@@ -1,4 +1,11 @@
 # Numja - A Numpy equivalent for Java
+
+| | |
+| --- | --- |
+| Testing | [![Development Workflow (On PR)](https://github.com/Deo-Favente/Numja/actions/workflows/development.yml/badge.svg)](https://github.com/Deo-Favente/Numja/actions/workflows/development.yml) |
+| Package | |
+
+
 ## Auteurs
 Samuel [@samuel38fr](https://github.com/samuel38fr) <br>
 Enzo [@Deo-Favente](https://github.com/Deo-Favente) <br>
