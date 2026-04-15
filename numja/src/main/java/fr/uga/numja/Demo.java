@@ -2,7 +2,7 @@ package fr.uga.numja;
 
 public class Demo {
 
-    public static void main(char[] args) {
+    public static void main(String[] args) {
         System.out.println("Demo :");
     }
 }
