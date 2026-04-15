@@ -12,6 +12,67 @@ public class Ndarray {
     }
 
     /**
+     * Creates a 1D Ndarray from a float array.
+     *
+     * @param tab input array
+     *
+     * @return a 1D Ndarray containing the same values
+     */
+    static public Ndarray array(float[] tab){
+        if(tab == null){
+            throw new IllegalArgumentException();
+        }
+        Ndarray array = new Ndarray();
+        array.ndim = 1;
+        array.shape[0] = tab.length;
+        array.shape[1] = 0;
+        array.size = array.shape[0];
+
+        array.data = new float[1][array.shape[0]];
+        System.arraycopy(tab, 0, array.data[0], 0, tab.length);
+
+        return array;
+    }
+
+    /**
+     * Creates a 2D Ndarray from a 2D float array.
+     *
+     * @param tab input 2D array
+     *
+     * @return a 2D Ndarray containing the same values
+     */
+    static public Ndarray array(float[][] tab){
+        if(tab == null){
+            throw new IllegalArgumentException();
+        }
+
+        //check if all rows have the same length
+        try{
+            int len = tab[0].length;
+            for(int i = 1; i < tab.length; i++){
+                if(tab[i].length != len){
+                    throw new IllegalArgumentException("All rows must have the same length");
+                }
+            }
+        }catch (NullPointerException e){
+            throw new IllegalArgumentException();
+        }
+
+        Ndarray array = new Ndarray();
+        array.ndim = 2;
+        array.shape[0] = tab.length;
+        array.shape[1] = tab[0].length;
+        array.size = array.shape[0] * array.shape[1];
+
+        array.data = new float[array.shape[0]][array.shape[1]];
+        for(int i = 0; i < array.shape[0]; i++){
+            System.arraycopy(tab[i], 0, array.data[i], 0, array.shape[1]);
+        }
+
+        return array;
+    }
+
+    /**
      * Creates a 1D array filled with zeros.
      *
      * @param dim size of the array
