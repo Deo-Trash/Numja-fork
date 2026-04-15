@@ -1,12 +1,13 @@
-FROM ubuntu:22.04
+FROM alpine:3.20
 
-RUN apt-get update && apt-get install -y \
-    openjdk-21-jdk \
-    maven \
-    git
+# Installation dépendances
+RUN apk update && apk upgrade
+RUN apk add git 
+RUN apk add maven
+RUN apk add openjdk21
 
 # Variables maven
-ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 ENV PATH=$JAVA_HOME/bin:$PATH
 
 # Clone
