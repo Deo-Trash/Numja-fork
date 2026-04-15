@@ -29,10 +29,10 @@ jobs:
         uses: cicirello/jacoco-badge-generator@v2
         with:
           jacoco-csv-file: numja/target/site/jacoco/jacoco.csv
-          badges-directory: numja/badges
+          badges-directory: badges
 
       - name: "Commit coverage badge"
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "Update JaCoCo badge"
-          file_pattern: numja/badges/*
+          file_pattern: badges/*
