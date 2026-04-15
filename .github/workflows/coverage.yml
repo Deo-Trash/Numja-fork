@@ -1,0 +1,38 @@
+name: Coverage
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  coverage:
+    name: Generate Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v5
+
+      - name: "Setup Java 21"
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'oracle'
+          cache: 'maven'
+
+      - name: "Run Maven with coverage"
+        working-directory: numja
+        run: mvn verify
+
+      - name: "Generate JaCoCo Badge"
+        uses: cicirello/jacoco-badge-generator@v2
+        with:
+          jacoco-csv-file: numja/target/site/jacoco/jacoco.csv
+          badges-directory: badges
+
+      - name: "Commit coverage badge"
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update JaCoCo badge"
+          file_pattern: badges/*
