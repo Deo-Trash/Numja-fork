@@ -9,7 +9,7 @@ Samuel [@samuel38fr](https://github.com/samuel38fr) <br>
 Enzo [@Deo-Favente](https://github.com/Deo-Favente) <br>
 Loïc [@Neayd](https://github.com/Neayd)
 
-Projet réalisé dans le cadre du cours de DevOps.
+Projet réalisé dans le cadre du coudddrs de DevOps.
 
 ## Fonctionnalités 
 - Vecteurs (1D) et de matrices (2D)
