@@ -1,4 +1,4 @@
-name: CI - Unit Tests & Sonar Analyze
+name: CI - Unit Tests & Analyze
 
 on:
   pull_request:
@@ -54,6 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Start Sonar Analyze
+        working-directory: numja
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
