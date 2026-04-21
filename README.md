@@ -40,7 +40,7 @@ Nous avons une nomenclature de nommage de branches afin d'avoir des noms normali
 - `bugfix/correctif`, `hotfix/correctif` : Correction de bugs
 - `doc/readme` : Ajout de documentation
 - `ci-cd/tests` : Améliorations liées au CI CD
-
+test
 ### Nomenclature des tags
 Les tags sont des versions du logiciel, avec leur fonctionnalités respectives, manuellement marquées par l'équipe de développement comme stables. On entend par stable sans bug connu, car la branche main peut parfois avoir besoin de correctifs.
 Les différentes versions du logicielles sont groupées par tag.
